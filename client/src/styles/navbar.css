@@ -1,0 +1,98 @@
+.navbar {
+  box-sizing: border-box;
+  height: 80px;
+  background: #ffffff;
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+}
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  width: 40%;
+}
+
+.logo {
+  height: 100%;
+  max-width: 100%;
+  fill: #ffffff;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+  padding: 0 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+li {
+  padding: 0 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+button {
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.createEventBtn {
+  background: #3974c3;
+}
+.loginBtn {
+  background: #df1637;
+}
+
+lord-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 1.25rem;
+}
+
+.notificationsBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.searchbar-container {
+  display: flex;
+  align-items: center;
+  min-width: 50%;
+  padding: 0 20px;
+  flex-grow: 1;
+}

@@ -1,0 +1,12 @@
+.landingPage_Container {
+  padding: 1.5rem 2rem;
+}
+h2 {
+  margin-bottom: 1rem;
+}
+.card_Container{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
