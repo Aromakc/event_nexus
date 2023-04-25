@@ -1,5 +1,7 @@
 .landingPage_Container {
   padding: 1.5rem 2rem;
+  background-color: var(--background-color);
+  
 }
 h2 {
   margin-bottom: 1rem;

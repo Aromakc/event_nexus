@@ -1,49 +1,57 @@
-.create-event-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1.3rem;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  input[type="text"],
-  textarea,
-  input[type="date"] {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    font-size: 1.2rem;
-  }
-  
-  textarea {
-    height: 10rem;
-    width: 40rem;
-  }
-  
-  button {
-    padding: 0.5rem 1rem;
-    background-color: #0077cc;
-    color: #fff;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #005299;
-  }
-  select {
-    font-size: 1.2rem;
-    height: 2.5rem;
-  }
+.createEventForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.3rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--background-color);
+}
+.formContainer {
+  padding: 2rem;
+  background: linear-gradient(
+    158.02deg,
+    rgba(73, 100, 171, 0.1) 36.27%,
+    rgba(46, 109, 151, 0.1) 85.62%
+  );
+  /* create shadow */
+  box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
+}
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.dateTimeSection {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.formGroupDate,
+.formGroupTime {
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+  width: 100%;
+}
+label {
+  font-weight: bold;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1.2rem;
+}
+
+textarea#eventDescription {
+  height: 10rem;
+  width: 40rem;
+}
+
+select#eventOrganizer {
+  font-size: 1.2rem;
+  height: 2.5rem;
+}

@@ -1,11 +1,9 @@
 .navbar {
   box-sizing: border-box;
   height: 80px;
-  background: #ffffff;
-  /* border: 1px solid rgba(0, 0, 0, 0.5); */
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
+  padding: 0rem 1.5rem;
 }
 
 .nav-left {
@@ -33,8 +31,10 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 10rem;
-  border: 1px solid rgba(0, 0, 0, 1);
+}
+svg {
+  height: 100%;
+  width: 100%;
 }
 
 ul {
@@ -53,24 +53,7 @@ li {
   overflow: hidden;
 }
 
-button {
-  border: none;
-  color: #ffffff;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.createEventBtn {
-  background: #3974c3;
-}
-.loginBtn {
-  background: #df1637;
-}
+
 
 lord-icon {
   width: 50px;
@@ -93,4 +76,11 @@ lord-icon {
   min-width: 50%;
   padding: 0 20px;
   flex-grow: 1;
+}
+
+.createEventBtn {
+  background: var(--primary-color);
+}
+.loginBtn {
+  background: var(--primary-color);
 }

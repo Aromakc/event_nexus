@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../components/card';
 import '../styles/home.css';
+
 const Home = () => {
   let thumbnailContent = {
     title: 'Registration for ML Bootcamp',

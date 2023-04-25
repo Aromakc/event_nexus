@@ -1,20 +1,20 @@
 import React from 'react';
 import '../styles/card.css';
-
+import ViewEvent from '../pages/viewEvent';
+import { useNavigate } from 'react-router-dom';
 const Card = (props) => {
+  const navigate = useNavigate();
   return (
-    <div>
-      <div class="card">
-        <img src={props.banner} alt="Banner" />
-        <div class="card-info">
-          <h2 class="card-title">{props.title}</h2>
-          <p class="card-date">
-            <i class="far fa-calendar-alt"></i> {props.date}
-          </p>
-            <p class="card-organizer">
-            <i class="fas fa-user"></i> {props.organizer}
-            </p>
-        </div>
+    <div className="card" onClick={() => navigate('/viewEvent')}>
+      <img src={props.banner} alt="Banner" />
+      <div className="card-info">
+        <h2 className="card-title">{props.title}</h2>
+        <p className="card-date">
+          <i className="far fa-calendar-alt"></i> {props.date}
+        </p>
+        <p className="card-organizer">
+          <i className="fas fa-user"></i> {props.organizer}
+        </p>
       </div>
     </div>
   );
