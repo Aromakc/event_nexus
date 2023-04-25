@@ -10,17 +10,17 @@ import Verify from './pages/Verify';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/createEvent" element={<CreateEvent />} />
-        <Route path="/viewEvent" element={<ViewEvent />} />
+      <Route path='/' element={<Layout />}>
+        <Route path='/' element={<Home />} />
+        <Route path='/createEvent' element={<CreateEvent />} />
+        <Route path='/viewEvent' element={<ViewEvent />} />
       </Route>
 
-      <Route path="/profile" element={<Profile />}>
-        <Route path="verify" element={<Verify />} />
+      <Route path='/profile' element={<Profile />}>
+        <Route path='verify' element={<Verify />} />
       </Route>
 
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path='*' element={<Navigate to='/' replace />} />
     </Routes>
   );
 }
