@@ -34,7 +34,7 @@ export default function UserDash() {
               : undefined
           }
           className={
-            'p-2 hover:pl-6 hover:underline underline-offset-4 transition-all duration-300'
+            'p-2 hover:pl-6 hover:underline underline-offset-4 transition-all duration-300 bg-gradient-to-br from-green-200 via-yellow-500 to-red-300 inline-block text-transparent bg-clip-text'
           }
         >
           Verify as Organizer
