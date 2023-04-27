@@ -13,8 +13,12 @@ export default function Profile() {
     'https://res.cloudinary.com/practicaldev/image/fetch/s--j4nMWL8c--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/852616/b89dcc2b-2b3e-4385-9793-72dfc45f386d.jpg'
   );
 
+  function handleEdit(event) {
+    console.log(event.target.name, event.target.value);
+    // set
+  }
   function handleSubmit(event) {
-    event.preventDefault();
+    // event.preventDefault();
     setEditing(false);
     console.log('Form Submitted!');
   }
@@ -44,6 +48,8 @@ export default function Profile() {
             <input
               type='text'
               name='name'
+              value={name}
+              onChange={handleEdit}
               placeholder='John Doe'
               className='outline-none'
               disabled={!editing}
@@ -54,6 +60,8 @@ export default function Profile() {
             <input
               type='tel'
               name='phone'
+              value={phone}
+              onChange={handleEdit}
               placeholder='9879876543210'
               className='outline-none'
               disabled={!editing}
@@ -66,6 +74,8 @@ export default function Profile() {
           <input
             type='text'
             name='email'
+            value={email}
+            onChange={handleEdit}
             placeholder='johndoe@gamil.com'
             className='outline-none'
             disabled={!editing}
@@ -75,8 +85,10 @@ export default function Profile() {
         <div className='flex flex-col gap-2 w-full'>
           <label htmlFor='club'>Club</label>
           <input
-            type=''
+            type='text'
             name='club'
+            value={club}
+            onChange={handleEdit}
             placeholder='KUCC'
             className='outline-none'
             disabled={!editing}
@@ -88,7 +100,7 @@ export default function Profile() {
           onClick={() => (editing ? handleSubmit() : startEditing())}
           className='ml-auto py-1 px-4 border-2 border-blue-500 w-fit rounded-lg bg-blue-500 text-white hover:bg-blue-700 active:bg-blue-900'
         >
-          Edit
+          {editing ? 'Update' : 'Edit'}
         </button>
       </form>
     </main>
