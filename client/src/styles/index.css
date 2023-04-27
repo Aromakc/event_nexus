@@ -37,6 +37,10 @@ code {
     monospace;
 }
 
+input {
+  @apply rounded;
+}
+
 .button {
   border: none;
   color: #ffffff;
