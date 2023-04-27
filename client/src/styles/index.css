@@ -13,24 +13,38 @@
   font-size: 10px;
 }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  font-family: 'Anuphan', sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* body { */
+/* margin: 0; */
+/* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+/* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+/* } */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.button{
+input {
+  @apply rounded;
+}
+
+.button {
   border: none;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -39,6 +53,7 @@ code {
   cursor: pointer;
   border-radius: 5px;
 }
-.button:hover{
+
+.button:hover {
   background-color: var(--secondary-color);
 }
