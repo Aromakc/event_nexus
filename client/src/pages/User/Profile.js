@@ -14,8 +14,26 @@ export default function Profile() {
   );
 
   function handleEdit(event) {
-    console.log(event.target.name, event.target.value);
-    // set
+    switch (event.target.name) {
+      case 'name':
+        console.log('changing name...');
+        setName(event.target.value);
+        break;
+      case 'phone':
+        console.log('changing phone...');
+        setPhone(event.target.value);
+        break;
+      case 'email':
+        console.log('changing email...');
+        setEmail(event.target.value);
+        break;
+      case 'club':
+        console.log('changing club...');
+        setClub(event.target.value);
+        break;
+    }
+    // need to modify this function so that every state variable is changed while editing
+    // then send a patch request only if something is changed
   }
   function handleSubmit(event) {
     // event.preventDefault();
@@ -30,12 +48,15 @@ export default function Profile() {
 
   return (
     <main className='flex justify-start p-4 gap-4'>
-      <div className='w-2/12'>
+      <div className='w-2/12 relative'>
         <img
           src={displayPicture}
           alt='User'
           className='rounded-full object-contain'
         />
+        <button className='w-full border-b-2 py-1 px-6 border-b-blue-400 absolute bottom-1/5 text-center text-gray-900'>
+          Change Photo
+        </button>
       </div>
 
       <form
