@@ -40,7 +40,7 @@ export default function UserDash() {
           Verify as Organizer
         </NavLink>
       </div>
-      <div className='float-right w-4/5'>
+      <div className='float-right w-4/5 p-4'>
         <Outlet />
       </div>
     </main>
