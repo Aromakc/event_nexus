@@ -29,7 +29,7 @@ export default function UserDash() {
               ? {
                   borderLeftWidth: '4px',
                   borderLeftColor: 'primary',
-                  paddingLeft: '1rem',
+                  paddingLeft: '1.5rem',
                 }
               : undefined
           }
