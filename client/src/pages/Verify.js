@@ -8,12 +8,12 @@ export default function Verify() {
         <input
           type='text'
           name='club'
-          placeholder='Club Name'
+          placeholder='KUCC'
           className='outline-none border-b-2 focus:border-b-green-500 invalid:border-b-red-500 transition-all
            duration-300 ease-in-out'
         />
       </div>
-      <button className='py-2 px-4 border-2 border-blue-500 w-fit rounded-lg bg-blue-500 text-white hover:bg-blue-700 active:bg-blue-900'>
+      <button className='py-1 px-4 border-2 border-blue-500 w-fit rounded-lg bg-blue-500 text-white hover:bg-blue-700 active:bg-blue-900'>
         Submit Request
       </button>
     </div>
