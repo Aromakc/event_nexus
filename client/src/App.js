@@ -15,11 +15,10 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/createEvent' element={<CreateEvent />} />
         <Route path='/viewEvent' element={<ViewEvent />} />
-      </Route>
-
-      <Route path='/profile' element={<UserDash />}>
-        <Route index element={<Profile />} />
-        <Route path='verify' element={<Verify />} />
+        <Route path='/profile' element={<UserDash />}>
+          <Route index element={<Profile />} />
+          <Route path='verify' element={<Verify />} />
+        </Route>
       </Route>
 
       <Route path='*' element={<Navigate to='/' replace />} />
