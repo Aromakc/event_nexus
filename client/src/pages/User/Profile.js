@@ -52,9 +52,9 @@ export default function Profile() {
         <img
           src={displayPicture}
           alt='User'
-          className='rounded-full object-contain'
+          className='rounded-full object-contain w-full max-w-[200px] mx-auto max-h-[200px]'
         />
-        <button className='w-full border-b-2 py-1 px-6 border-b-blue-400 absolute bottom-1/5 text-center text-gray-900'>
+        <button className='w-full border-b-2 py-1 px-6 bg-gray-200 hover:shadow-md rounded-lg transition-all duration-300 absolute top- text-center text-gray-900'>
           Change Photo
         </button>
       </div>
