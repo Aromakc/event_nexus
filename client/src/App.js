@@ -15,6 +15,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/createEvent' element={<CreateEvent />} />
         <Route path='/viewEvent' element={<ViewEvent />} />
+        <Route path='/event/:id' element={<ViewEvent />} />
         <Route path='/profile' element={<UserDash />}>
           <Route index element={<Profile />} />
           <Route path='verify' element={<Verify />} />
