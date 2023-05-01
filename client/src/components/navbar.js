@@ -7,7 +7,7 @@ import '../styles/navbar.css';
 
 const Navbar = () => {
   const navigate = useNavigate();
-
+  const [isVerified, setIsVerified] = React.useState(true);
   return (
     <nav className="navbar">
       <div className="nav-left">
@@ -50,29 +50,32 @@ const Navbar = () => {
       </div>
       <div className="nav-right">
         <ul className="nav-list">
-          <li>
-            {/* <Button color="blue" text="Create Event" link="createEvent" class="createEventBtn"/> */}
-            <button
-              className="button createEventBtn"
-              onClick={() => navigate('/createEvent')}
-            >
-              Create Event
-            </button>
-          </li>
-          <li>
-            <div className="notificationsBtn">
-              <NotificationsNoneOutlinedIcon style={{ fontSize: '30px' }} />
-            </div>
-          </li>
-          <li>
-            {/* <Button color='blue' text="Login" link="login" /> */}
-            <button
-              className="button loginBtn"
-              onClick={() => navigate('/login')}
-            >
-              Login
-            </button>
-          </li>
+          {isVerified ? (
+            <li>
+              {/* <Button color="blue" text="Create Event" link="createEvent" class="createEventBtn"/> */}
+              <button
+                className="button createEventBtn"
+                onClick={() => navigate('/createEvent')}
+              >
+                Create Event
+              </button>
+            </li>
+          ) : (
+            // <li>
+            //   <div className="notificationsBtn">
+            //     <NotificationsNoneOutlinedIcon style={{ fontSize: '30px' }} />
+            //   </div>
+            // </li>
+            <li>
+              {/* <Button color='blue' text="Login" link="login" /> */}
+              <button
+                className="button loginBtn"
+                onClick={() => navigate('/login')}
+              >
+                Login
+              </button>
+            </li>
+          )}
         </ul>
       </div>
     </nav>

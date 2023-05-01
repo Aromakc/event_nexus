@@ -5,7 +5,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/home';
 import CreateEvent from './pages/createEvent';
 import ViewEvent from './pages/viewEvent';
-import Verify from './pages/Verify';
+import Verify from './pages/User/Verify';
 import UserDash from './pages/User/UserDash';
 import Profile from './pages/User/Profile';
 function App() {
@@ -15,8 +15,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/createEvent' element={<CreateEvent />} />
         <Route path='/viewEvent' element={<ViewEvent />} />
-        <Route path='/profile' element={<UserDash />}>
-          <Route index element={<Profile />} />
+        <Route path='/user' element={<UserDash />}>
+          <Route path=':id' element={<Profile />} />
           <Route path='verify' element={<Verify />} />
         </Route>
       </Route>

@@ -1,46 +1,38 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import { MdOutlineAccountBox, MdVerified } from 'react-icons/md';
 
 export default function UserDash() {
+  const [isOrganizer, setOrganizer] = React.useState(false);
   return (
-    <main className=''>
-      <div className='float-left flex flex-col items-start justify-start bg-primary text-white p-4 w-1/5 fixed h-screen '>
+    <main className="flex">
+      <nav className="flex flex-col items-start justify-start gap-5 bg-primary text-white p-4 w-1/5 h-screen">
+        <h1 className="text-[4rem] font-bold pl-2">User Dashboard</h1>
+        <hr className="w-full border-2 border-white my-4" />
         <NavLink
-          to={''}
-          //   style={({ isActive }) =>
-          //     isActive
-          //       ? {
-          //           // borderLeftWidth: '4px',
-          //           // borderLeftColor: 'primary',
-          //           // paddingLeft: '1rem',
-          //         }
-          //       : undefined
-          //   }
-          className={
-            'p-2 hover:pl-6 hover:underline underline-offset-4 transition-all duration-300'
-          }
+          to={':id'}
+          className="flex items-center p-2 hover:pl-6 transition-all duration-300"
         >
-          Profile
+          <MdOutlineAccountBox style={{ fontSize: '2.5rem' }} />
+          <span className="ml-2">Your Profile</span>
         </NavLink>
-        <NavLink
-          to={'verify'}
-          style={({ isActive }) =>
-            isActive
-              ? {
-                  borderLeftWidth: '4px',
-                  borderLeftColor: 'primary',
-                  paddingLeft: '1.5rem',
-                }
-              : undefined
-          }
-          className={
-            'p-2 hover:pl-6 hover:underline underline-offset-4 transition-all duration-300 bg-gradient-to-br from-green-200 via-yellow-500 to-red-300 inline-block text-transparent bg-clip-text'
-          }
-        >
-          Verify as Organizer
-        </NavLink>
-      </div>
-      <div className='float-right w-4/5 p-4'>
+
+        {isOrganizer ? (
+          <span className="flex items-center p-2 hover:text-yellow-300 transition-all duration-300">
+            <MdVerified style={{ fontSize: '2.5rem' }} />
+            <span className="ml-2">Verified</span>
+          </span>
+        ) : (
+          <NavLink
+            to={'verify'}
+            className="flex items-center p-2 hover:pl-6 transition-all duration-300"
+          >
+            <MdVerified style={{ fontSize: '2.5rem' }} />
+            <span className="ml-2">Verify as Organizer</span>
+          </NavLink>
+        )}
+      </nav>
+      <div className="w-4/5 p-4">
         <Outlet />
       </div>
     </main>

@@ -1,5 +1,7 @@
 .navbar {
   box-sizing: border-box;
+  /* position: fixed; */
+
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -48,8 +50,6 @@ li {
   justify-content: center;
   overflow: hidden;
 }
-
-
 
 lord-icon {
   width: 50px;

@@ -29,7 +29,7 @@ export default function Verify() {
            duration-300 ease-in-out w-1/2 border'
         ></textarea>
       </div>
-      <button className='py-1 px-4 border-2 border-blue-500 w-fit rounded-lg bg-blue-500 text-white hover:bg-blue-700 active:bg-blue-900'>
+      <button className='py-1 px-4  w-fit rounded-lg bg-primary text-white hover:bg-secondary active:bg-blue-900'>
         Submit Request
       </button>
     </div>
