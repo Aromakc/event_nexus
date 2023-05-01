@@ -15,9 +15,9 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/createEvent' element={<CreateEvent />} />
         <Route path='/viewEvent' element={<ViewEvent />} />
+        <Route path='/event/:id' element={<ViewEvent />} />
         <Route path='/user' element={<UserDash />}>
           <Route path=':id' element={<Profile />} />
-          <Route path='verify' element={<Verify />} />
         </Route>
       </Route>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../components/card';
 import '../styles/home.css';
+import Hero from '../components/Hero/Hero';
 
 const Home = () => {
   let thumbnailContent = {
@@ -20,10 +21,13 @@ const Home = () => {
 
   return (
     <div>
-      <div className="landingPage_Container">
+      <div className='landingPage_Container'>
+        <div className='h-4/5 mt-4 mb-12'>
+          <Hero />
+        </div>
         <h2>Upcoming Events</h2>
         <hr />
-        <div className="card_Container">
+        <div className='card_Container'>
           <Card {...thumbnailContent} />
           <Card {...thumbnailContent2} />
           <Card {...thumbnailContent} />
@@ -32,7 +36,7 @@ const Home = () => {
 
         <h2> Past Events</h2>
         <hr />
-        <div className="card_Container">
+        <div className='card_Container'>
           <Card {...thumbnailContent} />
           <Card {...thumbnailContent2} />
         </div>
