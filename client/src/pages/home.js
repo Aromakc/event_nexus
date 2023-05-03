@@ -4,6 +4,7 @@ import Hero from '../components/Hero/Hero';
 
 const Home = () => {
   let thumbnailContent = {
+    id: 1,
     title: 'Registration for ML Bootcamp',
     date: 'Wed, 16th April',
     location: 'Room 404, Block 9',
@@ -11,6 +12,7 @@ const Home = () => {
     banner: 'thumbnail1.png',
   };
   let thumbnailContent2 = {
+    id: 2,
     title: 'Invitation for ‘Let’s Talk About JS’ MeetUp',
     date: 'Thu, 19th April',
     location: 'Room 304, Block 9',

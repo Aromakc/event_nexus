@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Card = (props) => {
   const navigate = useNavigate();
   return (
-    <div className="card" onClick={() => navigate('/viewEvent')}>
+    <div className="card" onClick={() => navigate(`/event/${props.id}`)}>
       <img src={props.banner} alt="Banner" />
       <div className="card-info">
         <h2 className="card-title">{props.title}</h2>
