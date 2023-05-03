@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from '../components/card';
-import '../styles/home.css';
 import Hero from '../components/Hero/Hero';
 
 const Home = () => {
@@ -20,28 +19,34 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <div className='landingPage_Container'>
+    <main>
+      <div className='px-[5rem] py-2 bg-background'>
         <div className='h-4/5 mt-4 mb-12'>
           <Hero />
         </div>
-        <h2>Upcoming Events</h2>
-        <hr />
-        <div className='card_Container'>
+        <hr className='border-t-2 border-gray my-4' />
+        <h2 className='text-3xl font-semibold text-zinc-700 my-10'>
+          Upcoming Events
+        </h2>
+        <div className='grid grid-cols-1 sm:grid-cols-4 gap-4'>
           <Card {...thumbnailContent} />
           <Card {...thumbnailContent2} />
+          <Card {...thumbnailContent} />
           <Card {...thumbnailContent} />
           <Card {...thumbnailContent} />
         </div>
 
-        <h2> Past Events</h2>
-        <hr />
-        <div className='card_Container'>
+        <hr className='border-t-2 border-gray my-4' />
+        <h2 className='text-3xl font-semibold text-zinc-700 my-10'>
+          {' '}
+          Past Events
+        </h2>
+        <div className='grid grid-cols-1 sm:grid-cols-4 gap-4'>
           <Card {...thumbnailContent} />
           <Card {...thumbnailContent2} />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
