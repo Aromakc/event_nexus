@@ -1,100 +1,126 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addPost } from '../slices/posts.slice';
 import '../styles/createEvent.css';
 
 const CreateEvent = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [date, setDate] = useState('');
+  const [dateStarts, setDateStarts] = useState('');
+  const [dateEnds, setDateEnds] = useState('');
   const [time, setTime] = useState('');
-  const [location, setLocation] = useState('');
+  const [venue, setVenue] = useState('');
+  const [online, setOnline] = useState(false);
   const [organizer, setOrganizer] = useState('');
   const [banner, setBanner] = useState('');
 
+  const dispatch = useDispatch();
+  // function to add newpost to the db.json file using redux
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // handle form submission here (e.g. send data to server)
+    dispatch(
+      addPost({
+        title,
+        description,
+        dateStarts,
+        dateEnds,
+        time,
+        venue,
+        online,
+        organizer,
+        banner,
+      })
+    );
+    setTitle('');
+    setDescription('');
+    setDateStarts('');
+    setDateEnds('');
+    setTime('');
+    setVenue('');
+    setOnline(false);
+    setOrganizer('');
+    setBanner('');
   };
 
   return (
-    <div className="createEventForm">
-      <form className="formContainer" onSubmit={handleFormSubmit}>
-        <div className="formGroup">
-          <label htmlFor="title">Event Name:</label>
+    <div className='createEventForm'>
+      <form className='formContainer' onSubmit={handleFormSubmit}>
+        <div className='formGroup'>
+          <label htmlFor='title'>Event Name:</label>
           <input
-            type="text"
-            id="title"
+            type='text'
+            id='title'
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
           />
         </div>
-        <div className="formGroup">
-          <label htmlFor="description">Event Description:</label>
+        <div className='formGroup'>
+          <label htmlFor='description'>Event Description:</label>
           <textarea
-            id="eventDescription"
+            id='eventDescription'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
           />
         </div>
-        <div className="formGroup dateTimeSection">
-          <div className="formGroupDate">
-            <label htmlFor="date">Date:</label>
+        <div className='formGroup dateTimeSection'>
+          <div className='formGroupDate'>
+            <label htmlFor='date'>Date:</label>
             <input
-              type="date"
-              id="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
+              type='date'
+              id='date'
+              value={dateStarts}
+              onChange={(e) => setDateStarts(e.target.value)}
               required
             />
           </div>
-          <div className="formGroupTime">
-            <label htmlFor="time">Time:</label>
+          <div className='formGroupTime'>
+            <label htmlFor='time'>Time:</label>
             <input
-              type="time"
-              id="time"
+              type='time'
+              id='time'
               value={time}
               onChange={(e) => setTime(e.target.value)}
               required
             />
           </div>
         </div>
-        <div className="formGroup">
-          <label htmlFor="location">Location:</label>
+        <div className='formGroup'>
+          <label htmlFor='venue'>Venue:</label>
           <input
-            type="text"
-            id="location"
-            value={location}
-            placeholder="Add venue or online"
-            onChange={(e) => setLocation(e.target.value)}
+            type='text'
+            id='venue'
+            value={venue}
+            placeholder='Add venue or online'
+            onChange={(e) => setVenue(e.target.value)}
             required
           />
         </div>
-        <div className="formGroup">
-          <label htmlFor="organizer">Organizer:</label>
+        <div className='formGroup'>
+          <label htmlFor='organizer'>Organizer:</label>
           <select
-            id="eventOrganizer"
+            id='eventOrganizer'
             onChange={(e) => setOrganizer(e.target.value)}
-            defaultValue="Select your organization"
             value={organizer}
             required
           >
-            <option value="Organizer 1">Organizer 1</option>
-            <option value="Organizer 2">Organizer 2</option>
+            <option value='Organizer 1'>Organizer 1</option>
+            <option value='Organizer 2'>Organizer 2</option>
           </select>
         </div>
-        <div className="formGroup">
-          <label htmlFor="banner">Banner Image:</label>
+        <div className='formGroup'>
+          <label htmlFor='banner'>Banner Image:</label>
           <input
-            type="file"
-            id="banner"
-            accept="image/*"
+            type='file'
+            id='banner'
+            accept='image/*'
             onChange={(e) => setBanner(e.target.files[0])}
             required
           />
         </div>
-        <div className="formGroup">
-          <button class="button createEventBtn" type="submit">
+        <div className='formGroup'>
+          <button className='button createEventBtn' type='submit'>
             Publish
           </button>
         </div>

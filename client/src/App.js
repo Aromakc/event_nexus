@@ -1,3 +1,4 @@
+import React from 'react';
 import './styles/App.css';
 import Layout from './components/layout';
 import { Routes, Route, Navigate } from 'react-router-dom';
@@ -14,10 +15,10 @@ function App() {
       <Route path='/' element={<Layout />}>
         <Route path='/' element={<Home />} />
         <Route path='/createEvent' element={<CreateEvent />} />
-        <Route path='/viewEvent' element={<ViewEvent />} />
         <Route path='/event/:id' element={<ViewEvent />} />
         <Route path='/user' element={<UserDash />}>
           <Route path=':id' element={<Profile />} />
+          <Route path='verify' element={<Verify />} />
         </Route>
       </Route>
 

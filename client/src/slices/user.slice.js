@@ -2,6 +2,7 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 
 const initialState = {
     verified: false,
+    organizer: false,
     id: '',
     name: '',
     email: '',

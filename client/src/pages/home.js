@@ -1,25 +1,58 @@
 import React from 'react';
 import Card from '../components/card';
 import Hero from '../components/Hero/Hero';
+import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { selectAllPosts } from '../slices/posts.slice';
 
 const Home = () => {
-  let thumbnailContent = {
-    id: 1,
-    title: 'Registration for ML Bootcamp',
-    date: 'Wed, 16th April',
-    location: 'Room 404, Block 9',
-    organizer: 'KUCC',
-    banner: 'thumbnail1.png',
-  };
-  let thumbnailContent2 = {
-    id: 2,
-    title: 'Invitation for ‘Let’s Talk About JS’ MeetUp',
-    date: 'Thu, 19th April',
-    location: 'Room 304, Block 9',
-    organizer: 'KUCC',
-    banner: 'thumbnail2.png',
-  };
 
+  //fetching posts from redux store
+  const posts = useSelector(selectAllPosts);
+
+  //filtering posts based on date
+  const currentDate = new Date();
+  const currentDateString = currentDate.toISOString().substring(0, 10);
+
+  const [ongoingPosts, setOngoingPosts] = useState([]);
+  const [pastPosts, setPastPosts] = useState([]);
+  const [upcomingPosts, setUpcomingPosts] = useState([]);
+
+  useEffect(() => {
+    const filteredPastPosts = posts.filter((post) => {
+      return (
+        post.dateStarts < currentDateString && post.dateEnds < currentDateString
+      );
+    });
+    setPastPosts(filteredPastPosts);
+
+    const filteredOngoingPosts = posts.filter((post) => {
+      return (
+        post.dateStarts <= currentDateString &&
+        post.dateEnds >= currentDateString
+      );
+    });
+    setOngoingPosts(filteredOngoingPosts);
+
+    const filteredUpcomingPosts = posts.filter((post) => {
+      return post.dateStarts > currentDateString;
+    });
+    setUpcomingPosts(filteredUpcomingPosts);
+  }, [posts, currentDateString]);
+
+  // //print posts title
+  // const ongoingPosts = posts.filter((post) => {
+  //   return post.dateStarts <= currentDateString && post.dateEnds >= currentDateString;
+  // });
+
+  // const pastPosts = posts.filter((post) => {
+  //   return post.dateEnds < currentDate;
+  // });
+  // const upcomingPosts = posts.filter((post) => {
+  //   return post.dateStarts > currentDate;
+  // });
+
+  // console.log(ongoingPosts, pastPosts, upcomingPosts)
   return (
     <main>
       <div className='px-[5rem] py-2 bg-background'>
@@ -31,11 +64,13 @@ const Home = () => {
           Upcoming Events
         </h2>
         <div className='grid grid-cols-1 sm:grid-cols-4 gap-4'>
-          <Card {...thumbnailContent} />
-          <Card {...thumbnailContent2} />
-          <Card {...thumbnailContent} />
-          <Card {...thumbnailContent} />
-          <Card {...thumbnailContent} />
+          {upcomingPosts.length > 0 ? (
+            upcomingPosts.map((post) => {
+              return <Card key={post.id} {...post} />;
+            })
+          ) : (
+            <p>No upcoming events</p>
+          )}
         </div>
 
         <hr className='border-t-2 border-gray my-4' />
@@ -44,8 +79,13 @@ const Home = () => {
           Past Events
         </h2>
         <div className='grid grid-cols-1 sm:grid-cols-4 gap-4'>
-          <Card {...thumbnailContent} />
-          <Card {...thumbnailContent2} />
+          {pastPosts.length > 0 ? (
+            pastPosts.map((post) => {
+              return <Card key={post.id} {...post} />;
+            })
+          ) : (
+            <p>No past events</p>
+          )}
         </div>
       </div>
     </main>

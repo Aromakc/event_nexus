@@ -1,0 +1,111 @@
+{
+  "user": {
+    "id": 1,
+    "name": "John Doe",
+    "email": "johndoe@gmail.com"
+  },
+  "posts": [
+    {
+      "id": 1,
+      "title": "AMES Annual Convention",
+      "description": "Join us for the Annual Convention of the Association of Mechanical Engineering Students (AMES).",
+      "banner": "https://source.unsplash.com/random/300x170/?mechanical,convention",
+      "dateStarts": "2022-08-12",
+      "dateEnds": "2022-08-14",
+      "time": "19:00",
+      "organizer": "Association of Mechanical Engineering Students (AMES)",
+      "owner": "Kathmandu University",
+      "online": false,
+      "venue": "Kathmandu University"
+    },
+    {
+      "id": 2,
+      "title": "KUCMC Programming Competition",
+      "description": "The Computational Mathematics Club (KUCMC) is hosting a programming competition. Join us for an exciting event!",
+      "banner": "https://source.unsplash.com/random/300x170/?computational,computer",
+      "dateStarts": "2022-09-15",
+      "dateEnds": "2022-09-15",
+      "time": "19:00",
+      "organizer": "Computational Mathematics Club (KUCMC)",
+      "owner": "Kathmandu University",
+      "online": true,
+      "venue": ""
+    },
+    {
+      "id": 3,
+      "title": "FECAM Environmental Summit",
+      "description": "The Forum for Environmental Conservation and Management (FECAM) is hosting an environmental summit. Join us and learn more about conservation and sustainable development.",
+      "banner": "https://source.unsplash.com/random/300x170/?environment,summit",
+      "dateStarts": "2023-06-05",
+      "dateEnds": "2022-07-06",
+      "time": "19:00",
+      "organizer": "Forum for Environmental Conservation and Management (FECAM)",
+      "owner": "Kathmandu University",
+      "online": false,
+      "venue": "Kathmandu University"
+    },
+    {
+      "id": 4,
+      "title": "FoP Seminar on Pharmacy Research",
+      "description": "The Forum for Pharmacy (FoP) is hosting a seminar on recent advances in pharmacy research.",
+      "banner": "https://source.unsplash.com/random/300x170/?seminar,pharmacy",
+      "dateStarts": "2023-06-01",
+      "dateEnds": "2023-07-15",
+      "time": "19:00",
+      "organizer": "Forum for Pharmacy (FoP)",
+      "owner": "Kathmandu University",
+      "online": true,
+      "venue": ""
+    },
+    {
+      "id": 5,
+      "title": "GES Geomatics Conference",
+      "description": "Join us for the Geomatics Engineering Society (GES) conference and learn more about geomatics and its applications.",
+      "banner": "https://source.unsplash.com/random/300x170/?conference,geomatics",
+      "dateStarts": "2023-07-18",
+      "dateEnds": "2023-07-19",
+      "time": "19:00",
+      "organizer": "Geomatics Engineering Society (GES)",
+      "owner": "Kathmandu University",
+      "online": false,
+      "venue": "Kathmandu University"
+    },
+    {
+      "id": 6,
+      "title": "Entrepreneurship Talk",
+      "description": "Join us for a talk on entrepreneurship and learn from successful entrepreneurs.",
+      "banner": "https://source.unsplash.com/random/300x170/?entrepreneurship,talkshow",
+      "dateStarts": "2023-07-15",
+      "dateEnds": "2023-07-15",
+      "time": "14:00",
+      "organizer": "Society of Business Information Students (SBIS)",
+      "owner": "John Doe",
+      "online": true,
+      "venue": ""
+    },
+    {
+      "title": "Blender Workshop",
+      "description": "Workshop on blender",
+      "dateStarts": "2023-05-07",
+      "dateEnds": "",
+      "time": "16:00",
+      "venue": "Block 9 KU ",
+      "online": false,
+      "organizer": "Organizer 2",
+      "banner": {},
+      "id": 7
+    },
+    {
+      "title": "Letter writing",
+      "description": "Sh sth",
+      "dateStarts": "2023-05-07",
+      "dateEnds": "",
+      "time": "10:14",
+      "venue": "fdfd",
+      "online": false,
+      "organizer": "",
+      "banner": {},
+      "id": 8
+    }
+  ]
+}
