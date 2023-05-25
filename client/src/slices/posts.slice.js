@@ -3,7 +3,7 @@ import axios from 'axios';
 
 //fetching from data/posts.json
 const URL = 'http://localhost:3500/posts';
-// Initial state
+
 const initialState = {
   posts: [],
   status: 'idle',
@@ -11,7 +11,7 @@ const initialState = {
 };
 
 // Async Thunks
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => { 
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
   const response = await axios.get(URL);
   return response.data;
 });
@@ -135,16 +135,16 @@ const postsSlice = createSlice({
 export default postsSlice.reducer;
 
 // Selectors
-export const selectAllPosts = (state) => state.posts.posts;
+export const selectAllPosts = (state) => state.events.posts;
 export const selectPostById = (state, postId) =>
-  state.posts.posts.find((post) => post.id === postId);
+  state.events.posts.find((post) => post.id === postId);
 export const selectPostsByUser = (state, userId) =>
-  state.posts.posts.filter((post) => post.owner === userId);
+  state.events.posts.filter((post) => post.owner === userId);
 export const selectPostsByOrganizer = (state, organizer) =>
-  state.posts.posts.filter((post) => post.organizer === organizer);
+  state.events.posts.filter((post) => post.organizer === organizer);
 export const selectPostsByBeginAt = (state, beginAt) =>
-  state.posts.posts.filter((post) => post.beginAt === beginAt);
+  state.events.posts.filter((post) => post.beginAt === beginAt);
 
-export const getPostsStatus = (state) => state.posts.status;
-export const getPostsError = (state) => state.posts.error;
+export const getPostsStatus = (state) => state.events.status;
+export const getPostsError = (state) => state.events.error;
 // Actions

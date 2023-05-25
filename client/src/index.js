@@ -9,8 +9,9 @@ import { store } from './store';
 import App from './App';
 
 import { fetchPosts } from './slices/posts.slice';
-
+import { fetchUsers } from './slices/users.slice';
 store.dispatch(fetchPosts());
+store.dispatch(fetchUsers());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

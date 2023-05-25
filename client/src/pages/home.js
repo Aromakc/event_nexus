@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import { selectAllPosts } from '../slices/posts.slice';
 
 const Home = () => {
-
   //fetching posts from redux store
   const posts = useSelector(selectAllPosts);
 

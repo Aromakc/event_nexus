@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { useDispatch } from 'react-redux';
+import { addUser } from './users.slice';
 
 const USER_KEY = 'user';
 
@@ -12,6 +14,8 @@ const authSlice = createSlice({
     setUser: (state, action) => {
       state.user = action.payload;
       localStorage.setItem(USER_KEY, JSON.stringify(action.payload));
+
+      //calling the addUser action from the users slice
     },
     clearUser: (state) => {
       state.user = null;
@@ -25,4 +29,5 @@ const authSlice = createSlice({
 
 export const { setUser, clearUser, setLoading } = authSlice.actions;
 export const selectUser = (state) => state.auth.user;
+export const selectLoading = (state) => state.auth.loading;
 export default authSlice.reducer;

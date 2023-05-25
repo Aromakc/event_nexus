@@ -3,13 +3,19 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import Card from '../../components/card';
 import { MdEdit, MdUpdate } from 'react-icons/md';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+
 export default function Profile() {
+  const { id } = useParams();
+  const user = useSelector((state) => state.auth.user);
+
   const [editing, setEditing] = useState(false);
 
   // set this after fetching API later, static for now
-  const [name, setName] = useState('Sandesh GC');
-  const [phone, setPhone] = useState('9779876543210');
-  const [email, setEmail] = useState('gcsandesh01@gamil.com');
+  const [name, setName] = useState('John Doe');
+  const [phone, setPhone] = useState('97798888888');
+  const [email, setEmail] = useState('johndoe@gamil.com');
   const [club, setClub] = useState('No registered club');
   const [organizer, setOrganizer] = useState(false);
   const [displayPicture, setDisplayPicture] = useState(

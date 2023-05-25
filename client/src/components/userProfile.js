@@ -34,7 +34,7 @@ const UserProfile = () => {
 
   const handleProfileClick = () => {
     handleMenuClose();
-    navigate('/user');
+    navigate(`/user/${user.sub}`);
   };
 
   return (
