@@ -5,7 +5,7 @@ export default function Verify() {
   const [description, setDescription] = useState(
     'Kathmandu University Computer Club'
   );
-
+    
   return (
     <div className='flex flex-col p-4 gap-4'>
       <div className='flex flex-col gap-2 items-start'>
