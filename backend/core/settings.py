@@ -21,6 +21,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -105,3 +106,14 @@ MEDIA_URL = "/media/"
 AUTH_USER_MODEL = "events.User"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+JAZZMIN_SETTINGS = {
+    # title of the window
+    "site_title": "Event Nexus Administrator",
+    # Title on the brand, and the login screen (19 chars max)
+    "site_header": "Event Nexus",
+    # Welcome text on the login screen
+    "welcome_sign": "Event Nexus Administrator",
+    "copyright": "Aayush Pokharel",
+}
