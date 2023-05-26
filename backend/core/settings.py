@@ -62,17 +62,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "core.wsgi.application"
 
-DATABASES = {
-    # Prod DataBase Server
-    # "default": dj_database_url.config(
-    #     default=os.environ["DATABASE_URL"], engine="django_cockroachdb"
-    # ),
-    # Dev DataBase Server
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+
+if DEBUG == True:
+    DATABASES = {
+        # Dev DataBase Server
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
     }
-}
+
+if DEBUG == False:
+    DATABASES = {
+        # Prod DataBase Server
+        "default": dj_database_url.config(
+            default=os.environ["DATABASE_URL"], engine="django_cockroachdb"
+        ),
+    }
 
 
 AUTH_PASSWORD_VALIDATORS = [
