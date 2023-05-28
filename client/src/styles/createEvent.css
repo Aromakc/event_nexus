@@ -16,10 +16,11 @@
   /* create shadow */
   box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
 }
+
 .formGroup {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 .dateTimeSection {
   flex-direction: row;
@@ -29,9 +30,14 @@
 .formGroupTime {
   display: flex;
   flex-direction: column;
-  padding-right: 1rem;
+  /* padding-right: 1rem; */
   width: 100%;
 }
+
+.formGroupDate > input#startDate {
+  margin-right: 1rem;
+}
+
 label {
   font-weight: bold;
   line-height: 2rem;

@@ -3,5 +3,5 @@ from graphene_django.views import GraphQLView
 from events.schema import schema
 
 urlpatterns = [
-    path("graphql", GraphQLView.as_view(graphiql=True, schema=schema)),
+    path("graphql", GraphQLView.as_view(graphiql=True, schema=schema)), 
 ]

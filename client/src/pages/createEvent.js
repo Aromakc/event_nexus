@@ -9,6 +9,7 @@ const CreateEvent = () => {
   const [dateStarts, setDateStarts] = useState('');
   const [dateEnds, setDateEnds] = useState('');
   const [time, setTime] = useState('');
+  // const [hasNoVenue, setHasNoVenue] = useState(false);
   const [venue, setVenue] = useState('');
   const [online, setOnline] = useState(false);
   const [organizer, setOrganizer] = useState('');
@@ -66,17 +67,17 @@ const CreateEvent = () => {
         </div>
         <div className='formGroup dateTimeSection'>
           <div className='formGroupDate'>
-            <label htmlFor='date'>Date:</label>
+            <label htmlFor='startDate'>Start Date:</label>
             <input
               type='date'
-              id='date'
+              id='startDate'
               value={dateStarts}
               onChange={(e) => setDateStarts(e.target.value)}
               required
             />
           </div>
           <div className='formGroupTime'>
-            <label htmlFor='time'>Time:</label>
+            <label htmlFor='time'>Start Time:</label>
             <input
               type='time'
               id='time'
@@ -86,16 +87,43 @@ const CreateEvent = () => {
             />
           </div>
         </div>
-        <div className='formGroup'>
-          <label htmlFor='venue'>Venue:</label>
+
+        <div className='formGroupDate'>
+          <label htmlFor='endDate'>End Date:</label>
           <input
-            type='text'
-            id='venue'
-            value={venue}
-            placeholder='Add venue or online'
-            onChange={(e) => setVenue(e.target.value)}
+            type='date'
+            id='endDate'
+            value={dateEnds}
+            onChange={(e) => setDateEnds(e.target.value)}
             required
           />
+        </div>
+
+        <div className='formGroup'>
+          <label htmlFor='venue'>Venue:</label>
+          <label
+            htmlFor='online'
+            className='flex items-center gap-2 font-normal'
+          >
+            <input
+              type='checkbox'
+              id='online'
+              checked={online}
+              onClick={() => setOnline(!online)}
+            />
+            Online
+          </label>
+
+          {!online && (
+            <input
+              type='text'
+              id='venue'
+              value={venue}
+              placeholder='Add venue'
+              onChange={(e) => setVenue(e.target.value)}
+              required={!online}
+            />
+          )}
         </div>
         <div className='formGroup'>
           <label htmlFor='organizer'>Organizer:</label>
