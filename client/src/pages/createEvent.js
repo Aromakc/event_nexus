@@ -66,17 +66,17 @@ const CreateEvent = () => {
         </div>
         <div className='formGroup dateTimeSection'>
           <div className='formGroupDate'>
-            <label htmlFor='date'>Date:</label>
+            <label htmlFor='startDate'>Start Date:</label>
             <input
               type='date'
-              id='date'
+              id='startDate'
               value={dateStarts}
               onChange={(e) => setDateStarts(e.target.value)}
               required
             />
           </div>
           <div className='formGroupTime'>
-            <label htmlFor='time'>Time:</label>
+            <label htmlFor='time'>Start Time:</label>
             <input
               type='time'
               id='time'
@@ -86,6 +86,18 @@ const CreateEvent = () => {
             />
           </div>
         </div>
+
+        <div className='formGroupDate'>
+          <label htmlFor='endDate'>End Date:</label>
+          <input
+            type='date'
+            id='endDate'
+            value={dateEnds}
+            onChange={(e) => setDateEnds(e.target.value)}
+            required
+          />
+        </div>
+
         <div className='formGroup'>
           <label htmlFor='venue'>Venue:</label>
           <input

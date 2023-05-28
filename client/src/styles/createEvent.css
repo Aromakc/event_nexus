@@ -29,8 +29,12 @@
 .formGroupTime {
   display: flex;
   flex-direction: column;
-  padding-right: 1rem;
+  /* padding-right: 1rem; */
   width: 100%;
+}
+
+.formGroupDate > input#startDate {
+  margin-right: 1rem;
 }
 label {
   font-weight: bold;
