@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-
-const URL = 'http://localhost:3500/users';
+import { gql } from '@apollo/client';
+import client from '../apolloClient';
 
 const initialState = {
   users: [],
@@ -10,22 +9,51 @@ const initialState = {
 };
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
-  const response = await axios.get(URL);
+  const GET_USERS = gql`
+    query {
+      // Add the query
+    }
+  `;
+
+  const response = await client.query({ query: GET_USERS });
   return response.data;
 });
 
 export const addUser = createAsyncThunk('users/addUser', async (userData) => {
-  const response = await axios.post(URL, userData);
-  return response.data;
+  const ADD_USER = gql`
+    mutation AddUser($userData: UserInput!) {
+      addUser(input: $userData) {
+        // Define the fields you want to retrieve from the mutation response
+      }
+    }
+  `;
+
+  const response = await client.mutate({
+    mutation: ADD_USER,
+    variables: { userData },
+  });
+  return response.data.addUser;
 });
 
 export const updateUser = createAsyncThunk(
   'users/updateUser',
   async (userData) => {
     const { id } = userData;
+
+    const UPDATE_USER = gql`
+      mutation UpdateUser($id: ID!, $userData: UserInput!) {
+        updateUser(id: $id, input: $userData) {
+          // Define the fields you want to retrieve from the mutation response
+        }
+      }
+    `;
+
     try {
-      const response = await axios.put(`${URL}/${id}`, userData);
-      return response.data;
+      const response = await client.mutate({
+        mutation: UPDATE_USER,
+        variables: { id, userData },
+      });
+      return response.data.updateUser;
     } catch (error) {
       return error.message;
     }
@@ -36,12 +64,24 @@ export const deleteUser = createAsyncThunk(
   'users/deleteUser',
   async (userData) => {
     const { id } = userData;
+
+    const DELETE_USER = gql`
+      mutation DeleteUser($id: ID!) {
+        deleteUser(id: $id) {
+          // Define the fields you want to retrieve from the mutation response
+        }
+      }
+    `;
+
     try {
-      const response = await axios.delete(`${URL}/${id}`);
-      if (response?.status === 200) return userData;
-      return `${response?.status}: ${response?.statusText}`;
-    } catch (err) {
-      return err.message;
+      const response = await client.mutate({
+        mutation: DELETE_USER,
+        variables: { id },
+      });
+      if (response?.data?.deleteUser) return userData;
+      return `Error deleting user with ID: ${id}`;
+    } catch (error) {
+      return error.message;
     }
   }
 );

@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-
-//fetching from data/posts.json
-const URL = 'http://localhost:3500/posts';
+import { gql } from '@apollo/client';
+import client from '../apolloClient';
 
 const initialState = {
   posts: [],
@@ -12,22 +10,51 @@ const initialState = {
 
 // Async Thunks
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-  const response = await axios.get(URL);
+  const GET_POSTS = gql`
+    query {
+      // Add the query to retrieve posts
+    }
+  `;
+
+  const response = await client.query({ query: GET_POSTS });
   return response.data;
 });
 
 export const addPost = createAsyncThunk('posts/addPost', async (postData) => {
-  const response = await axios.post(URL, postData);
-  return response.data;
+  const ADD_POST = gql`
+    mutation AddPost($postData: PostInput!) {
+      addPost(input: $postData) {
+        // Define the fields you want to retrieve from the mutation response
+      }
+    }
+  `;
+
+  const response = await client.mutate({
+    mutation: ADD_POST,
+    variables: { postData },
+  });
+  return response.data.addPost;
 });
 
 export const updatePost = createAsyncThunk(
   'posts/updatePost',
   async (postData) => {
     const { id } = postData;
+
+    const UPDATE_POST = gql`
+      mutation UpdatePost($id: ID!, $postData: PostInput!) {
+        updatePost(id: $id, input: $postData) {
+          // Define the fields you want to retrieve from the mutation response
+        }
+      }
+    `;
+
     try {
-      const response = await axios.put(`${URL}/${id}`, postData);
-      return response.data;
+      const response = await client.mutate({
+        mutation: UPDATE_POST,
+        variables: { id, postData },
+      });
+      return response.data.updatePost;
     } catch (error) {
       return error.message;
     }
@@ -38,12 +65,24 @@ export const deletePost = createAsyncThunk(
   'posts/deletePost',
   async (postData) => {
     const { id } = postData;
+
+    const DELETE_POST = gql`
+      mutation DeletePost($id: ID!) {
+        deletePost(id: $id) {
+          // Define the fields you want to retrieve from the mutation response
+        }
+      }
+    `;
+
     try {
-      const response = await axios.delete(`${URL}/${id}`);
-      if (response?.status === 200) return postData;
-      return `${response?.status}: ${response?.statusText}`;
-    } catch (err) {
-      return err.message;
+      const response = await client.mutate({
+        mutation: DELETE_POST,
+        variables: { id },
+      });
+      if (response?.data?.deletePost) return postData;
+      return `Error deleting post with ID: ${id}`;
+    } catch (error) {
+      return error.message;
     }
   }
 );
