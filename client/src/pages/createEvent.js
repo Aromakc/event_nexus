@@ -9,6 +9,7 @@ const CreateEvent = () => {
   const [dateStarts, setDateStarts] = useState('');
   const [dateEnds, setDateEnds] = useState('');
   const [time, setTime] = useState('');
+  // const [hasNoVenue, setHasNoVenue] = useState(false);
   const [venue, setVenue] = useState('');
   const [online, setOnline] = useState(false);
   const [organizer, setOrganizer] = useState('');
@@ -100,14 +101,29 @@ const CreateEvent = () => {
 
         <div className='formGroup'>
           <label htmlFor='venue'>Venue:</label>
-          <input
-            type='text'
-            id='venue'
-            value={venue}
-            placeholder='Add venue or online'
-            onChange={(e) => setVenue(e.target.value)}
-            required
-          />
+          <label
+            htmlFor='online'
+            className='flex items-center gap-2 font-normal'
+          >
+            <input
+              type='checkbox'
+              id='online'
+              checked={online}
+              onClick={() => setOnline(!online)}
+            />
+            Online
+          </label>
+
+          {!online && (
+            <input
+              type='text'
+              id='venue'
+              value={venue}
+              placeholder='Add venue'
+              onChange={(e) => setVenue(e.target.value)}
+              required={!online}
+            />
+          )}
         </div>
         <div className='formGroup'>
           <label htmlFor='organizer'>Organizer:</label>
