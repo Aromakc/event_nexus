@@ -16,7 +16,8 @@ const Home = () => {
   const [ongoingPosts, setOngoingPosts] = useState([]);
   const [pastPosts, setPastPosts] = useState([]);
   const [upcomingPosts, setUpcomingPosts] = useState([]);
-
+  
+  
   useEffect(() => {
     const filteredPastPosts = posts.filter((post) => {
       return (

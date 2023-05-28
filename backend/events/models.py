@@ -89,7 +89,7 @@ class Post(models.Model):
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="posts_owned"
     )
-    online = models.BooleanField()
+    online = models.BooleanField(null=True, blank=True)
     venue = models.CharField(max_length=100)
     subscribers = models.ManyToManyField(
         User, through="Subscription", related_name="subscribed_posts"
