@@ -23,7 +23,7 @@ class Organizer(models.Model):
     phone_number = models.CharField(
         max_length=14, validators=[phone_regex], null=True, blank=True
     )
-    active = models.BooleanField(default=True)
+    active = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -51,7 +51,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         message="Phone number must be entered in the format: '+977xxxxxxxxxx'.",
     )
 
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.CharField(primary_key=True, max_length=255, editable=False)
     name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
     avatar = models.ImageField(upload_to="user_avatars/", null=True, blank=True)
