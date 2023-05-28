@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { useDispatch } from 'react-redux';
-import { addUser } from './users.slice';
 
 const USER_KEY = 'user';
 

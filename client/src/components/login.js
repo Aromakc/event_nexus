@@ -8,8 +8,7 @@ import {
   setUser,
   selectLoading,
 } from '../slices/auth.slice';
-import { addUser, selectUserById } from '../slices/users.slice';
-import axios from 'axios';
+import { addUser } from '../slices/users.slice';
 
 const handleAddUser = (googleCredentialRes, userId) => {
   const { id, email, name, picture } = googleCredentialRes;
@@ -29,7 +28,7 @@ const handleAddUser = (googleCredentialRes, userId) => {
 
 const LoginButton = () => {
   const dispatch = useDispatch();
-  const userId ='';
+  const userId = '';
   // const userId = useSelector();
   const loading = useSelector(selectLoading);
 
@@ -40,11 +39,12 @@ const LoginButton = () => {
       onSuccess={(response) => {
         const decoded = jwt_decode(response.credential);
 
-        const userData = handleAddUser(decoded, userId);
-        if (userData) {
-          dispatch(addUser(userData));
+        //code to add user to the database using addUser action but only if the user is not already in the database
+        try {
+          dispatch(addUser);
+        } catch (error) {
+          console.log(error);
         }
-
         dispatch(setUser(decoded));
         dispatch(setLoading(false));
       }}

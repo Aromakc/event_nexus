@@ -1,4 +1,79 @@
 {
+  "organizers": [
+    {
+      "active": true,
+      "logo": "https://res.cloudinary.com/aromakc38/image/upload/v1685311964/zzjlswyt1gejaazkt3in.png",
+      "description": "KUCC is a non-profit, independent club formed by students of the Department of Computer Science and Engineering in the year 1997. Being registered as the first club of Kathmandu University with the registration number 001/1997 in the Student Welfare, KUCC has worked in the field of ICT for twenty years. KUCC has more than 1000 members from Department of Computer Science and Engineering. Kathmandu University Computer Club (KUCC) is a student wing of the Department of Computer Science and Engineering which was established with a goal to engage and aware students in the technological research and development, most prominently in the ICT field and at the same time provides a common platform for young and aspiring individuals to exhibit their ideas. Every year KUCC cooperates and organizes numerous competitive as well as non-competitive events like seminars, exhibitions, hackathon, skill development program and tutorial sessions to name a few, with an unwavering intention to promote, develop and encourage emerging technological advancement.",
+      "email": "kucc@ku.edu.np",
+      "id": "d8f4468c-ac55-4c64-b3c1-abe1fd8ee22f",
+      "name": "Kathmandu University Computer Club (KUCC)",
+      "phoneNumber": "+9779864441086",
+      "website": "https://kucc.ku.edu.np/",
+      "eventsOrganized": [],
+      "members": []
+    },
+    {
+      "active": true,
+      "description": "Founded back in 2000 AD, Society of Electrical and Electronics Engineers is a student club under the Department of Electrical & Electronics Engineering, Kathmandu University. SEEE is involved in improving learning environment and the welfare of the students in the department since its establishment. Being a multidisciplinary club it not only focuses on the topic related to Electrical and Electronics but also conducts social welfare activities and helps improve interaction among students at the department. We are working under 3A's - Alumni, Academics & Activities.",
+      "email": "seee@ku.edu.np",
+      "id": "69755e96-7984-4cf5-a27f-33b6ab924225",
+      "logo": "organization_logos/SEEE-logo.png",
+      "name": "Society of Electrical and Electronic Engineering (SEEE)",
+      "phoneNumber": "+9779867331764",
+      "website": "https://seee.ku.edu.np/",
+      "eventsOrganized": [],
+      "members": []
+    },
+    {
+      "active": true,
+      "description": "KURC is an inter-department club of enthusiastic students which is working in the field of Robotics including all its subsidiaries (Electronics, Mechanical, Computer, Geomatics and others). KURC seeks to increase student interest and involvement in science, technology, engineering and mathematics through learning by doing dictum.\r\n\r\nThe KURC develops partnerships with interdepartmental participation, higher education, government, industry and the non-profit community to achieve this goal.Engaging students in hands-on sustainable and affordable curriculum-based robotics engineering programs nationally and internationally.\r\n\r\n-------OBJECTIVES---------\r\n\r\nUnite all enthusiast individuals in the field of robotics\r\nCarry out multidisciplinary activities and dig out the creativity of students\r\nUtilize available resources inside and outside of KU to mark it as a pioneer institution in the field of Robotics\r\nEmbroil individuals as well as institutions to work on robotics in national and international levels\r\nEnhance and improve the present scenario of society and nation through Robotics as well as other activities",
+      "email": "kurc@ku.edu.np",
+      "id": "1f531f0b-0f57-4ac1-a8fe-37eef52c6901",
+      "logo": "organization_logos/kurc-logo.png",
+      "name": "Kathmandu University Robotics Club (KURC)",
+      "phoneNumber": "+9779867827548",
+      "website": "https://kurc.ku.edu.np/",
+      "eventsOrganized": [],
+      "members": []
+    },
+    {
+      "active": true,
+      "description": "Forum for Pharmacy (FoP) is an organization established in 1999 by the pharmacy students of Kathmandu University (KU) for the welfare of pharmacy education and the profession as a whole with an objective to work for professional and academic activity in and out of KU. This organization is independent to organize its activities within the limit of its objective under the umbrella of KU.\r\n\r\nObjectives\r\nCarry out different activities to improve knowledge skill and attitude of the students in professional and academic matters.\r\nOrganize different activities to the communities for the social benefits. The different activities includes the following:\r\nPublication of pharmaceutical related newsletter, bulletins, posters etc comprising student and faculty activities including drug information which is beneficial to the medical and non-medical personals.\r\nOrganization of social work beneficial to the society in relation to the pharmacy. This may include training and other education programs.\r\nOrganization of talk programs.\r\nFind out resources to carry out research and development work.\r\nDevelopment of relationship between pharmaceutical industries and the pharmaceutical activities.\r\nOrganization of interaction program among students.\r\nEncouragement of members in the research and development works.",
+      "email": "pharmacy@ku.edu.np",
+      "id": "c7f3bd6d-63f8-45d5-9dd3-c0804d9c938c",
+      "logo": "",
+      "name": "Forum for Pharmacy (FoP)",
+      "phoneNumber": "+9770110415100",
+      "website": "https://pharm.ku.edu.np/",
+      "eventsOrganized": [],
+      "members": []
+    },
+    {
+      "active": true,
+      "description": "Established in 2002 A.D., AMES is a student wing of Mechanical Engineering students that provides platform to delve into the practical side of the contextual matters and involves the students in various co- curricular and extra curricular activities through various programs. The club is moderated by the department and conducts different programs as per the academic calendar in response to the department.\r\n\r\nAMES conducts various activities collaboration with other clubs within the university and engineering associations outside the university. AMES also collaborates with different governmental and non- governmental agencies to organize awareness and advocacy programs.\r\n\r\nAMES occasionally organizes software training, welcome-farewell, mechanical cup, indoor games.\r\n\r\nThe faculty coordinator of AMES is Dr. Surendra Sujakhu (Assistant professor).",
+      "email": "ames@ku.edu.np",
+      "id": "0804da7c-970e-4ffe-8a95-42b4c118f3f2",
+      "logo": "organization_logos/AMES-Logo.png",
+      "name": "Association of Mechanical Engineering Students (AMES)",
+      "phoneNumber": "+9779860527748",
+      "website": "https://ames.ku.edu.np/",
+      "eventsOrganized": [],
+      "members": []
+    },
+    {
+      "active": true,
+      "description": "KUCEC is a highly active and dynamic club that conducts a wide range of activities and events to engage and inspire its members. The club’s activities are designed to provide hands-on learning experiences, as well as opportunities to network and collaborate with industry professionals.All of these activities are planned and executed by the active participation and hard work of club members. The club encourages all members to take an active role in organizing and participating in these events, and provides them with the necessary support and resources to do so.",
+      "email": "kucec@ku.edu.np",
+      "id": "0f6dcbd8-2293-4ae1-ac6f-d39f7e2e916a",
+      "logo": "",
+      "name": "Kathmandu University Civil Engineering Club (KUCEC)",
+      "phoneNumber": "+9779812707986",
+      "website": "http://cec.ku.edu.np/",
+      "eventsOrganized": [],
+      "members": []
+    }
+  ],
+
   "users": [
     {
       "id": 1,
@@ -143,6 +218,43 @@
       "organizer": "Organizer 2",
       "banner": {},
       "id": 9
+    },
+
+    {
+      "title": "Open Tech Meetup",
+      "description": "Greeting Everyone,\\r\\n\\r\\nThis is a reminder for the event ”Open Tech Meetup and OSM Mapping Workshop” that is going to happen for two days starting from 11th May (tomorrow) to 12th May.This event aims to bring together geomatics and computer science enthusiasts with a passion is mapping and open source to promote collaboration between them.\\r\\n\\r\\nWe're thrilled to announce that we have an amazing lineup of guest speakers for the event. \\r\\n\\r\\nOn Day 1, Arjun Gautam, the community lead of Open Tech Community and a passionate advocate for open source community, will be speaking. \\r\\n\\r\\nOn Day 2, we're excited to welcome Saurav Bhattarai, the CTO of Baato, a Nepalese startup that uses OSM to map streets, as well as Krishna Lodha, an expert in geospatial data with years of experience who will be sharing their experience and knowledge on geospatial data and OSM.\\r\\n\\r\\nThis is a fantastic opportunity to learn from these amazing speakers and develop your skills in open source mapping. \\r\\n\\r\\nIf you haven't already, please fill out the registration form https://forms.gle/6qcPiQE2jKzDWZfJ6.\\r\\n\\r\\nPlease mark your calendar with the following details:\\r\\nDate: 2023/05/11 and  2023/05/12\\r\\nTime: 2:00 AM to 4:00 AM\\r\\nVenue: Block 9, Room 402\\r\\n\\r\\nLooking forward to seeing you all there.\",",
+      "dateStarts": "2023-05-11",
+      "dateEnds": "2023-05-12",
+      "time": "14:24",
+      "venue": "Block 9, Room 404",
+      "online": false,
+      "organizer": "Organizer 2",
+      "banner": "https://res.cloudinary.com/aromakc38/image/upload/v1685306414/buxs1be3mrrh53im1uju.png",
+      "id": 11
+    },
+    {
+      "title": "Departmental Orientation for B.Pharm 2022",
+      "description": "We are delighted to invite you to the Departmental Orientation for B.Pharm 2022 at our esteemed institution. This orientation program is specially designed to welcome and introduce you to the field of Pharmacy and provide you with essential information about your academic journey ahead.\\r\\n\\r\\nDuring this orientation, you will have the opportunity to meet our experienced faculty members, who will guide you through the curriculum and share valuable insights about the program. You will also get acquainted with your fellow students, forming connections and friendships that will last throughout your time at the institution.\\r\\n\\r\\nShould you have any further queries or require additional information, please feel free to reach out to us. We eagerly anticipate your presence at the orientation and wish you a successful and enriching journey in the field of Pharmacy.",
+      "dateStarts": "2023-06-30",
+      "dateEnds": "2023-06-30",
+      "time": "10:00",
+      "venue": "CV Raman Auditorium",
+      "online": false,
+      "organizer": "",
+      "banner": "https://res.cloudinary.com/aromakc38/image/upload/v1685307304/jnpgolroqwq6ukherejo.jpg",
+      "id": 12
+    },
+    {
+      "title": "Cyber Security Orientation",
+      "description": "Cyber Security Orientation is happening today, May 10 at 5 PM. Please make sure to join the meeting on time using the Zoom link or meeting ID provided below:\\r\\n\\r\\nZoom Meeting Link: https://nren.zoom.us/j/64256010638?pwd=QUVqMkw5SnBKZE1zUXZsRjhCZGpXQT09\\r\\nMeeting ID: 642 5601 0638 \\r\\nPasscode: 330525\\r\\n\\r\\nPlease feel free to invite your colleagues who may also benefit from this orientation.\"",
+      "dateStarts": "2023-05-28",
+      "dateEnds": "2023-06-08",
+      "time": "16:00",
+      "venue": "",
+      "online": true,
+      "organizer": "Kathmandu University Computer Club (KUCC)",
+      "banner": "https://res.cloudinary.com/aromakc38/image/upload/v1685307677/o54nlcso97bnhtttxbem.jpg",
+      "id": 13
     }
   ]
 }

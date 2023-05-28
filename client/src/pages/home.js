@@ -3,10 +3,9 @@ import Card from '../components/card';
 import Hero from '../components/Hero/Hero';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { selectAllPosts } from '../slices/posts.slice';
-
+import {  selectAllPosts } from '../slices/posts.slice';
 const Home = () => {
-  //fetching posts from redux store
+
   const posts = useSelector(selectAllPosts);
 
   //filtering posts based on date
@@ -56,7 +55,7 @@ const Home = () => {
     <main>
       <div className='px-[5rem] py-2'>
         <div className='h-4/5 mt-4 mb-12'>
-          <Hero />
+          <Hero events = {ongoingPosts} />
         </div>
         <hr className='border-t-2 border-gray my-4' />
         <h2 className='text-3xl font-semibold text-zinc-700 my-10'>

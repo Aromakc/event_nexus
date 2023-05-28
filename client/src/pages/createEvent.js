@@ -1,22 +1,44 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPost } from '../slices/posts.slice';
+import { fill } from '@cloudinary/url-gen/actions/resize';
+import { CloudinaryImage } from '@cloudinary/url-gen';
+import { selectOrganizers } from '../slices/organizers.slice';
 import '../styles/createEvent.css';
 
 const CreateEvent = () => {
+  const dispatch = useDispatch();
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [dateStarts, setDateStarts] = useState('');
   const [dateEnds, setDateEnds] = useState('');
   const [time, setTime] = useState('');
-  // const [hasNoVenue, setHasNoVenue] = useState(false);
-  const [venue, setVenue] = useState('');
   const [online, setOnline] = useState(false);
+  const [venue, setVenue] = useState('');
   const [organizer, setOrganizer] = useState('');
   const [banner, setBanner] = useState('');
 
-  const dispatch = useDispatch();
-  // function to add newpost to the db.json file using redux
+  // generating cloudinary link when new photo is added
+  const cloud_name = 'aromakc38';
+  function handleFile(e) {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'eventnexus');
+    formData.append('cloud_name', cloud_name);
+    fetch(`https://api.cloudinary.com/v1_1/aromakc38/image/upload`, {
+      method: 'POST',
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => setBanner(data.secure_url))
+      .catch((err) => console.log(err));
+  }
+  const displayBanner = new CloudinaryImage(banner).resize(
+    fill().width(200).height(200)
+  );
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     dispatch(
@@ -43,6 +65,8 @@ const CreateEvent = () => {
     setBanner('');
   };
 
+  //fetching organizers from the database
+  const organizers = useSelector(selectOrganizers);
   return (
     <div className='createEventForm'>
       <form className='formContainer' onSubmit={handleFormSubmit}>
@@ -108,7 +132,7 @@ const CreateEvent = () => {
               type='checkbox'
               id='online'
               checked={online}
-              onClick={() => setOnline(!online)}
+              onChange={() => setOnline(!online)}
             />
             Online
           </label>
@@ -132,8 +156,15 @@ const CreateEvent = () => {
             value={organizer}
             required
           >
-            <option value='Organizer 1'>Organizer 1</option>
-            <option value='Organizer 2'>Organizer 2</option>
+            {/* mapping organizers and showing lists */}
+            <option value='' disabled>
+              Select Organizer
+            </option>
+            {organizers.map((organizer) => (
+              <option key={organizer.id} value={organizer.id}>
+                {organizer.name}
+              </option>
+            ))}
           </select>
         </div>
         <div className='formGroup'>
@@ -142,17 +173,21 @@ const CreateEvent = () => {
             type='file'
             id='banner'
             accept='image/*'
-            onChange={(e) => setBanner(e.target.files[0])}
+            onChange={handleFile}
             required
           />
         </div>
-        <div className='formGroup'>
+        <div className='formGroup flex items-center'>
           {banner && (
             <div>
               <img
-                src={URL.createObjectURL(banner)}
+                src={banner}
                 alt='Selected Banner'
-                style={{ maxWidth: '200px', maxHeight:'200px', marginTop: '1rem' }}
+                style={{
+                  maxWidth: '200px',
+                  maxHeight: '200px',
+                  marginTop: '1rem',
+                }}
               />
             </div>
           )}
