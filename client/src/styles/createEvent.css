@@ -4,7 +4,7 @@
   align-items: center;
   font-size: 1.3rem;
   padding: 1.5rem 2rem;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
 }
 .formContainer {
   padding: 2rem;

@@ -16,8 +16,7 @@ const Home = () => {
   const [ongoingPosts, setOngoingPosts] = useState([]);
   const [pastPosts, setPastPosts] = useState([]);
   const [upcomingPosts, setUpcomingPosts] = useState([]);
-  
-  
+
   useEffect(() => {
     const filteredPastPosts = posts.filter((post) => {
       return (
@@ -55,7 +54,7 @@ const Home = () => {
   // console.log(ongoingPosts, pastPosts, upcomingPosts)
   return (
     <main>
-      <div className='px-[5rem] py-2 bg-background'>
+      <div className='px-[5rem] py-2'>
         <div className='h-4/5 mt-4 mb-12'>
           <Hero />
         </div>

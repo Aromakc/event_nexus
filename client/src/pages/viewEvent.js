@@ -2,7 +2,7 @@ import React from 'react';
 
 const ViewEvent = (props) => {
   return (
-    <main className="bg-neutral-50 p-10 h-screen">
+    <main className="p-10 h-screen">
       <div className="flex justify-between mx-20 px-6 py-6 bg-white drop-shadow-md">
         <div className="flex flex-col px-4">
           <h1 className="flex text-5xl mb-4 font-medium">

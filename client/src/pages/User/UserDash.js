@@ -32,7 +32,7 @@ export default function UserDash() {
           </NavLink>
         )}
       </nav>
-      <div className='w-4/5 p-10 bg-background'>
+      <div className='w-4/5 p-10 bg-white'>
         <Outlet />
       </div>
     </main>

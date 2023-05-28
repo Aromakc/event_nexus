@@ -76,25 +76,24 @@ const CreateEvent = () => {
               required
             />
           </div>
-          <div className='formGroupTime'>
-            <label htmlFor='time'>Start Time:</label>
+          <div className='formGroupDate'>
+            <label htmlFor='endDate'>End Date:</label>
             <input
-              type='time'
-              id='time'
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
+              type='date'
+              id='endDate'
+              value={dateEnds}
+              onChange={(e) => setDateEnds(e.target.value)}
               required
             />
           </div>
         </div>
-
-        <div className='formGroupDate'>
-          <label htmlFor='endDate'>End Date:</label>
+        <div className='formGroupTime'>
+          <label htmlFor='time'>Start Time:</label>
           <input
-            type='date'
-            id='endDate'
-            value={dateEnds}
-            onChange={(e) => setDateEnds(e.target.value)}
+            type='time'
+            id='time'
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
             required
           />
         </div>
@@ -146,6 +145,17 @@ const CreateEvent = () => {
             onChange={(e) => setBanner(e.target.files[0])}
             required
           />
+        </div>
+        <div className='formGroup'>
+          {banner && (
+            <div>
+              <img
+                src={URL.createObjectURL(banner)}
+                alt='Selected Banner'
+                style={{ maxWidth: '200px', maxHeight:'200px', marginTop: '1rem' }}
+              />
+            </div>
+          )}
         </div>
         <div className='formGroup'>
           <button className='button createEventBtn' type='submit'>

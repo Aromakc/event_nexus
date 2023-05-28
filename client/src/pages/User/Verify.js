@@ -5,7 +5,7 @@ export default function Verify() {
   const [club, setClub] = useState('');
   const [role, setRole] = useState('');
   const [description, setDescription] = useState('');
-
+  const organizers = ['a', 'b', 'c'];
   const handleChange = (e) => {
     switch (e.target.name) {
       case 'club':
@@ -40,22 +40,29 @@ export default function Verify() {
             htmlFor='club'
             className='flex flex-col gap-2 items-start w-full'
           >
-            Club Name:
-            <input
-              type='text'
+            <span className='ml-1 text-2xl'>Club Name:</span>
+
+            <select
               name='club'
               value={club}
               onChange={handleChange}
-              placeholder='Name of club'
-              className='outline-none transition-all
-             duration-300 ease-in-out font-normal text-xl rounded-md w-full'
-            />
+              className='border-2 border-slate-400 font-normal text-2xl rounded-md w-full'
+            >
+              <option value='' disabled>
+                Select your club
+              </option>
+              {organizers.map((organizer) => (
+                <option key={organizer} value={organizer}>
+                  {organizer}
+                </option>
+              ))}
+            </select>
           </label>
           <label
             htmlFor='role'
             className='flex flex-col gap-2 items-start  w-full'
           >
-            Club Role:
+            <span className='ml-1 text-2xl'>Club Role:</span>
             <input
               type='text'
               id='role'
@@ -71,7 +78,7 @@ export default function Verify() {
             htmlFor='description'
             className='flex flex-col gap-2 items-start w-full'
           >
-            Description:
+            <span className='ml-1 text-2xl'>Description:</span>
             <textarea
               type='text'
               name='description'
