@@ -80,8 +80,8 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     banner = models.ImageField(upload_to="post_banners/")
-    begin_at = models.DateTimeField()
-    end_at = models.DateTimeField()
+    begin_at = models.DateField()
+    end_at = models.DateField()
     time = models.TimeField()
     organizer = models.ForeignKey(
         Organizer, on_delete=models.CASCADE, related_name="posts_organized"
@@ -90,7 +90,7 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name="posts_owned"
     )
     online = models.BooleanField(null=True, blank=True)
-    venue = models.CharField(max_length=100)
+    venue = models.CharField(null=True, blank=True, max_length=100)
     subscribers = models.ManyToManyField(
         User, through="Subscription", related_name="subscribed_posts"
     )
