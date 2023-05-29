@@ -136,8 +136,12 @@ export default postsSlice.reducer;
 
 // Selectors
 export const selectAllPosts = (state) => state.events.posts;
-export const selectPostById = (state, postId) =>
-  state.events.posts.find((post) => post.id === postId);
+
+export const selectPostById = (state, postId) => {
+  console.log('selectpostByid', postId);
+  return state.events.posts.find((post) => post.id === postId);
+};
+
 export const selectPostsByUser = (state, userId) =>
   state.events.posts.filter((post) => post.owner === userId);
 export const selectPostsByOrganizer = (state, organizer) =>

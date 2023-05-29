@@ -183,42 +183,6 @@
       "online": true,
       "venue": ""
     },
-    {
-      "title": "Blender Workshop",
-      "description": "Workshop on blender",
-      "dateStarts": "2023-05-07",
-      "dateEnds": "",
-      "time": "16:00",
-      "venue": "Block 9 KU ",
-      "online": false,
-      "organizer": "Organizer 2",
-      "banner": {},
-      "id": 7
-    },
-    {
-      "title": "Letter writing",
-      "description": "Sh sth",
-      "dateStarts": "2023-05-07",
-      "dateEnds": "",
-      "time": "10:14",
-      "venue": "fdfd",
-      "online": false,
-      "organizer": "",
-      "banner": {},
-      "id": 8
-    },
-    {
-      "title": "No recognition of drives while installing OS! ",
-      "description": "df",
-      "dateStarts": "2023-05-08",
-      "dateEnds": "",
-      "time": "20:36",
-      "venue": "Block 9 KU ",
-      "online": false,
-      "organizer": "Organizer 2",
-      "banner": {},
-      "id": 9
-    },
 
     {
       "title": "Open Tech Meetup",
@@ -246,7 +210,7 @@
     },
     {
       "title": "Cyber Security Orientation",
-      "description": "Cyber Security Orientation is happening today, May 10 at 5 PM. Please make sure to join the meeting on time using the Zoom link or meeting ID provided below:\\r\\n\\r\\nZoom Meeting Link: https://nren.zoom.us/j/64256010638?pwd=QUVqMkw5SnBKZE1zUXZsRjhCZGpXQT09\\r\\nMeeting ID: 642 5601 0638 \\r\\nPasscode: 330525\\r\\n\\r\\nPlease feel free to invite your colleagues who may also benefit from this orientation.\"",
+      "description": "Cyber Security Orientation is happening today, May 10 at 5 PM. Please make sure to join the meeting on time using the Zoom link or meeting ID provided below:  /n Zoom Meeting Link: https://nren.zoom.us/j/64256010638?pwd=QUVqMkw5SnBKZE1zUXZsRjhCZGpXQT09  /n  Meeting ID: 642 5601 0638  /n Passcode: 330525 /n Please feel free to invite your colleagues who may also benefit from this orientation. /n ",
       "dateStarts": "2023-05-28",
       "dateEnds": "2023-06-08",
       "time": "16:00",
